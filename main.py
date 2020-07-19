@@ -1,4 +1,3 @@
-# -*- coding:utf-8 -*-
 import spidev as SPI
 import ST7789
 import RPi.GPIO as GPIO
@@ -383,14 +382,16 @@ class Thread_Jailbreak(threading.Thread):
 							newprocess.kill()
 							os.system('usbmuxd')
 							jb["running"] = False
+							ui["main_menu_options"][0] = "Jailbreak"
 							
 						disp_update = True
 				
 				def done(cmd, success, exit_code):
 					newprocess.kill()
 					os.system('usbmuxd')
-					jb["running"] = False
 					ui["main_menu_options"][0] = "Jailbreak"
+					jb["running"] = False
+					
 					os.system('usbmuxd')
 					
 				try:
