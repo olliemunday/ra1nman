@@ -1,0 +1,12 @@
+[Unit]
+Description=Ra1nman
+After=network.target
+
+[Service]
+ExecStart=/usr/local/share/ra1nman/run.sh
+WorkingDirectory=/usr/local/share/ra1nman
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
