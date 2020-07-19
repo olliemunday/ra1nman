@@ -1,8 +1,3 @@
-if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root, use sudo "$0" instead" 1>&2
-   exit 1
-fi
-
 cd /tmp
 
 # Update and upgrade packages
