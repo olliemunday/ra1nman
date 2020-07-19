@@ -9,17 +9,17 @@ cd /tmp
 
 echo "Updating packages"
 apt update
-apt upgrade
+apt -y upgrade
 
 echo "Installing dependancies"
 
-apt install -y python python-dev python-pip libreadline-dev libzip-dev libcurl4-openssl-dev libssl-dev libxml2-dev libusb-1.0-0-dev libusb-1.0-0 automake autotools-dev autoconf checkinstall git libatlas-base-dev libjpeg-dev zlib1g-dev libtool libtool-bin m4 libplist-dev libusbmuxd-dev libimobiledevice-dev libffi-dev usbmuxd libfreetype6-dev
+apt -y install python python-dev python-pip libreadline-dev libzip-dev libcurl4-openssl-dev libssl-dev libxml2-dev libusb-1.0-0-dev libusb-1.0-0 automake autotools-dev autoconf checkinstall git libatlas-base-dev libjpeg-dev zlib1g-dev libtool libtool-bin m4 libplist-dev libusbmuxd-dev libimobiledevice-dev libffi-dev usbmuxd libfreetype6-dev
 
 echo "Installing Python modules"
-sudo -u#1000 pip --no-cache-dir install setuptools wheel
-sudo -u#1000 pip wheel numpy
-sudo -u#1000 pip install numpy
-sudo -u#1000 pip --no-cache-dir install spidev libusb Pillow sh RPi.GPIO
+pip --no-cache-dir install setuptools wheel
+pip wheel numpy
+pip install numpy
+pip --no-cache-dir install spidev libusb Pillow sh RPi.GPIO
 
 echo "Setting up environment"
 
@@ -48,35 +48,35 @@ cd ..
 
 echo "Installing libimobiledevice"
 
-sudo -u#1000 git clone https://github.com/libimobiledevice/libplist
+git clone https://github.com/libimobiledevice/libplist
 cd libplist
 ./autogen.sh
 make
 make install
 cd ..
 
-sudo -u#1000 git clone https://github.com/libimobiledevice/libusbmuxd
+git clone https://github.com/libimobiledevice/libusbmuxd
 cd libusbmuxd
 ./autogen.sh
 make
 sudo make install
 cd ..
 
-sudo -u#1000 git clone https://github.com/libimobiledevice/libimobiledevice
+git clone https://github.com/libimobiledevice/libimobiledevice
 cd libimobiledevice
 ./autogen.sh
 make
 make install
 cd ..
 
-sudo -u#1000 git clone https://github.com/libimobiledevice/libirecovery
+git clone https://github.com/libimobiledevice/libirecovery
 cd libirecovery
 ./autogen.sh
 make
 make install
 cd ..
 
-sudo -u#1000 git clone https://github.com/libimobiledevice/idevicerestore
+git clone https://github.com/libimobiledevice/idevicerestore
 cd idevicerestore
 ./autogen.sh
 make
