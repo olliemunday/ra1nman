@@ -125,13 +125,13 @@ GPIO.setup(KEY3_PIN,        GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Input with pu
 GPIO.setup(BL,GPIO.OUT)
 GPIO.output(BL, GPIO.HIGH)
 
-bold18 = ImageFont.truetype('/home/pi/app/fonts/arialbd.ttf', 18)
-bold14 = ImageFont.truetype('/home/pi/app/fonts/arialbd.ttf', 14)
-bold11 = ImageFont.truetype('/home/pi/app/fonts/arialbd.ttf', 11)
-reg14 = ImageFont.truetype('/home/pi/app/fonts/arial.ttf', 14)
-reg12 = ImageFont.truetype('/home/pi/app/fonts/arial.ttf', 12)
-reg10 = ImageFont.truetype('/home/pi/app/fonts/arial.ttf', 10)
-reg9 = ImageFont.truetype('/home/pi/app/fonts/arial.ttf', 9)
+bold18 = ImageFont.truetype('fonts/arialbd.ttf', 18)
+bold14 = ImageFont.truetype('fonts/arialbd.ttf', 14)
+bold11 = ImageFont.truetype('fonts/arialbd.ttf', 11)
+reg14 = ImageFont.truetype('fonts/arial.ttf', 14)
+reg12 = ImageFont.truetype('fonts/arial.ttf', 12)
+reg10 = ImageFont.truetype('fonts/arial.ttf', 10)
+reg9 = ImageFont.truetype('fonts/arial.ttf', 9)
 
 
 def insert_newlines(string, every=64):
